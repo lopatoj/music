@@ -54,6 +54,7 @@ const Header: m.Component = {
             [
               m(Link, { href: "/" }, "home"),
               m(Link, { href: "/about" }, "about"),
+              m(Link, { href: "/upload" }, "upload"),
             ]
           ),
         ]
