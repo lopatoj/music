@@ -3,10 +3,7 @@ import "~/styles.css";
 
 const Container: m.Component = {
   view: (v) => {
-    return m(
-      "div.center",
-      m("div", { style: { width: "50%", padding: "1rem" } }, v.children)
-    );
+    return m("div.center", m("div.width", v.children));
   },
 };
 

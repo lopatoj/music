@@ -23,10 +23,23 @@ body {
   justify-content: center;
 }
 
+.width {
+  width: 50%;
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* ~/components/link.ts */
 .link {
   text-decoration: none;
   color: rgb(255, 255, 255);
+  cursor: pointer;
 
   transition: all 0.1s ease-in-out;
 }
@@ -44,9 +57,15 @@ body {
   position: sticky;
   top: 0;
 
-  background-color: rgb(10, 16, 14, 0.7);
+  background-color: rgb(10, 16, 14, 0.4);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   
   font-size: 1rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }

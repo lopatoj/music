@@ -4,61 +4,20 @@ import "~/styles.css";
 import Header from "~/components/header";
 import Container from "~/components/container";
 import Plate from "~/components/plate";
+import Link from "~/components/link";
 
-const Main: m.Component = {
+interface Page extends m.Component {
+  posts: any[];
+  addPost: (post: String) => void;
+}
+
+const Main: Page = {
+  posts: [],
+  addPost: () => {
+    Main.posts.push("poast");
+  },
   view: (v) => {
-    return [
-      m(Header),
-      m(Container, 
-        m(Plate, [
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-        m("h1", "Mithril TypeScript Starter"),
-        m("p", "This is the main page."),
-        m("p", "Click on the links above to navigate."),
-        m("p", "This starter is based on the Mithril TypeScript Starter by @jakedeichert."),
-        m("p", "The source code for this starter is available at"),
-
-      ])),
-    ];
+    return [m(Header, m("a.link", {onclick: v.state.addPost}, "add post")), m(Container, v.state.posts.map((post: String) => m(Plate, m("div", post))))];
   },
 };
 
